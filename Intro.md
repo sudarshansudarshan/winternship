@@ -2,6 +2,6 @@
 layout: page
 title: Intro 
 permalink: /intro/
-order: 2
+order: 1
 ---
 This is the Intro Page.

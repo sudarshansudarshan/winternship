@@ -1,0 +1,21 @@
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/ffi-1.15.5/ext/ffi_c
+C:/Ruby34-x64/bin/ruby.exe extconf.rb
+checking for pkg-config for libffi... not found
+checking for ffi.h... no
+checking for ffi.h in /usr/local/include,/usr/include/ffi,/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/ffi,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/ffi... no
+checking for whether -Wl,--exclude-libs,ALL is accepted as LDFLAGS... yes
+checking for whether -pthread is accepted as LDFLAGS... yes
+creating extconf.h
+creating Makefile
+
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/ffi-1.15.5/ext/ffi_c
+make DESTDIR\= sitearchdir\=./.gem.20251224-26092-431wjd sitelibdir\=./.gem.20251224-26092-431wjd clean
+
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/ffi-1.15.5/ext/ffi_c
+make DESTDIR\= sitearchdir\=./.gem.20251224-26092-431wjd sitelibdir\=./.gem.20251224-26092-431wjd
+generating ffi_c-x64-mingw-ucrt.def
+/bin/sh: -c: line 1: syntax error near unexpected token `('
+/bin/sh: -c: line 1: `mkdir -p "/e/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/ffi-1.15.5/ext/ffi_c/libffi-x64-mingw-ucrt" ""/e/Rohit(D)"'
+make: *** [libffi.mk:6: "/e/Rohit] Error 2
+
+make failed, exit code 2

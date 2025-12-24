@@ -1,9 +1,9 @@
 
 
 
-header_pages:
-  - Faq.md
+header_pages:  
   - Intro.md
+  - Faq.md
   - case-studies.md
 
 
@@ -24,7 +24,7 @@ theme: minima
 plugins:
   - jekyll-feed
 
-timezone: IST
+timezone: Asia/Kolkata
 
 collections:
   case_studies:

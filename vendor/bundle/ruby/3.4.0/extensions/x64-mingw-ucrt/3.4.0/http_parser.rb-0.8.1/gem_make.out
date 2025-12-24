@@ -1,0 +1,20 @@
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+C:/Ruby34-x64/bin/ruby.exe extconf.rb
+creating Makefile
+
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20251224-20176-3wz0jl sitelibdir\=./.gem.20251224-20176-3wz0jl clean
+
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20251224-20176-3wz0jl sitelibdir\=./.gem.20251224-20176-3wz0jl
+generating ruby_http_parser-x64-mingw-ucrt.def
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.so
+
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20251224-20176-3wz0jl sitelibdir\=./.gem.20251224-20176-3wz0jl install
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20251224-20176-3wz0jl
+
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.1/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20251224-20176-3wz0jl sitelibdir\=./.gem.20251224-20176-3wz0jl clean

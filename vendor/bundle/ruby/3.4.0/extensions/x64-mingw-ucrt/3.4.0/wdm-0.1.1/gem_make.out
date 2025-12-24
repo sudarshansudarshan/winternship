@@ -1,0 +1,74 @@
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/wdm-0.1.1/ext/wdm
+C:/Ruby34-x64/bin/ruby.exe extconf.rb
+checking for -lkernel32... yes
+checking for windows.h... yes
+checking for ruby.h... yes
+checking for HAVE_RUBY_ENCODING_H... yes
+checking for rb_thread_call_without_gvl()... yes
+creating Makefile
+
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/wdm-0.1.1/ext/wdm
+make DESTDIR\= sitearchdir\=./.gem.20251224-26092-ifnx1u sitelibdir\=./.gem.20251224-26092-ifnx1u clean
+
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/wdm-0.1.1/ext/wdm
+make DESTDIR\= sitearchdir\=./.gem.20251224-26092-ifnx1u sitelibdir\=./.gem.20251224-26092-ifnx1u
+generating wdm_ext-x64-mingw-ucrt.def
+compiling entry.c
+compiling memory.c
+compiling monitor.c
+compiling queue.c
+compiling rb_change.c
+rb_change.c: In function 'extract_absolute_path_from_notification':
+rb_change.c:139:5: warning: 'RB_OBJ_TAINT' is deprecated: taintedness turned out to be a wrong idea. [-Wdeprecated-declarations]
+  139 |     OBJ_TAINT(path);
+      |     ^~~~~~~~~
+In file included from C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rstring.h:30,
+                 from C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/arithmetic/char.h:29,
+                 from C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/arithmetic.h:24,
+                 from C:/Ruby34-x64/include/ruby-3.4.0/ruby/ruby.h:28,
+                 from C:/Ruby34-x64/include/ruby-3.4.0/ruby.h:38,
+                 from wdm.h:22,
+                 from rb_change.c:4:
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/fl_type.h:824:1: note: declared here
+  824 | RB_OBJ_TAINT(VALUE obj)
+      | ^~~~~~~~~~~~
+compiling rb_monitor.c
+rb_monitor.c: In function 'rb_monitor_alloc':
+rb_monitor.c:109:5: warning: 'rb_data_object_wrap_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  109 |     return Data_Wrap_Struct(self, monitor_mark, monitor_free, wdm_monitor_new());
+      |     ^~~~~~
+In file included from C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core.h:27,
+                 from C:/Ruby34-x64/include/ruby-3.4.0/ruby/ruby.h:29,
+                 from C:/Ruby34-x64/include/ruby-3.4.0/ruby.h:38,
+                 from wdm.h:22,
+                 from rb_monitor.c:1:
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:293:1: note: declared here
+  293 | rb_data_object_wrap_warning(VALUE klass, void *ptr, RUBY_DATA_FUNC mark, RUBY_DATA_FUNC free)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+rb_monitor.c: In function 'combined_watch':
+rb_monitor.c:159:5: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  159 |     Data_Get_Struct(self, WDM_Monitor, monitor);
+      |     ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+rb_monitor.c: In function 'rb_monitor_run_bang':
+rb_monitor.c:470:5: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  470 |     Data_Get_Struct(self, WDM_Monitor, monitor);
+      |     ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+rb_monitor.c:509:29: error: implicit declaration of function 'rb_thread_call_without_gvl' [-Wimplicit-function-declaration]
+  509 |         waiting_succeeded = rb_thread_call_without_gvl(wait_for_changes, monitor->process_event, stop_monitoring, monitor);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+rb_monitor.c: In function 'rb_monitor_stop':
+rb_monitor.c:538:5: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  538 |     Data_Get_Struct(self, WDM_Monitor, monitor);
+      |     ^~~~~~~~~~~~~~~
+C:/Ruby34-x64/include/ruby-3.4.0/ruby/internal/core/rdata.h:325:1: note: declared here
+  325 | rb_data_object_get_warning(VALUE obj)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Makefile:251: rb_monitor.o] Error 1
+
+make failed, exit code 2

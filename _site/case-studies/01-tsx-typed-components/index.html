@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>TSX &amp; Typed Components_ | Winternship 2025</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="TSX &amp; Typed Components_" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="TSX &amp; Typed Components in React: Props Interfaces, State Typing, Functional &amp; Class Components" />
+<meta property="og:description" content="TSX &amp; Typed Components in React: Props Interfaces, State Typing, Functional &amp; Class Components" />
+<link rel="canonical" href="http://localhost:4000/winternship/case-studies/01-tsx-typed-components/" />
+<meta property="og:url" content="http://localhost:4000/winternship/case-studies/01-tsx-typed-components/" />
+<meta property="og:site_name" content="Winternship 2025" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-12-24T14:51:59+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="TSX &amp; Typed Components_" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-12-24T14:51:59+05:30","datePublished":"2025-12-24T14:51:59+05:30","description":"TSX &amp; Typed Components in React: Props Interfaces, State Typing, Functional &amp; Class Components","headline":"TSX &amp; Typed Components_","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/winternship/case-studies/01-tsx-typed-components/"},"url":"http://localhost:4000/winternship/case-studies/01-tsx-typed-components/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/winternship/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/winternship/feed.xml" title="Winternship 2025" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/winternship/">Winternship 2025</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/winternship/intro/">Intro</a><a class="page-link" href="/winternship/faq/">FAQ</a><a class="page-link" href="/winternship/case-studies/">Case Studies</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">TSX & Typed Components_</h1>
+    <p class="post-description">Learn about TSX & Typed Components_ in React</p>
+  </header>
+
+  <div class="post-content">
+    <p>TSX &amp; Typed Components in React: Props Interfaces, State Typing, Functional &amp; Class Components</p>
+
+<h2 id="1-problem-statement">1. Problem Statement</h2>
+
+<h2 id="case-study-smart-portfolio-dashboard"><strong>Case Study: Smart Portfolio Dashboard</strong></h2>
+
+<p>You’re building a financial portfolio dashboard:</p>
+
+<ul>
+  <li>
+    <p>Each asset card must show a name, symbol, current value, and percentage change—all with strict type safety.</p>
+  </li>
+  <li>
+    <p>Users can add, remove, or update assets, and the UI must prevent type errors (e.g., mixing up numbers and strings, missing props).</p>
+  </li>
+  <li>
+    <p>Some components are stateless (just display data), others manage complex, interactive state (adding assets, editing values).</p>
+  </li>
+  <li>
+    <p>The team wants to avoid runtime bugs from missing or mistyped props, and ensure state is always managed correctly.</p>
+  </li>
+</ul>
+
+<p><img src="https://i.postimg.cc/BnMKw9cs/react8.png" alt="Sample Image" width="400" /></p>
+
+<p><strong>The challenge:</strong><br />
+How do you ensure every React component—functional or class—has strictly typed props and state, so the UI is robust, maintainable, and error-free?</p>
+
+<hr />
+
+<h2 id="2-learning-objectives">2. Learning Objectives</h2>
+
+<p>By the end of this tutorial, you will:</p>
+
+<ul>
+  <li>
+    <p>Define and use  <strong>props interfaces</strong>  for both functional and class components.</p>
+  </li>
+  <li>
+    <p>Strongly type component state (with  <code class="language-plaintext highlighter-rouge">useState</code>,  <code class="language-plaintext highlighter-rouge">useReducer</code>, and class state).</p>
+  </li>
+  <li>
+    <p>Know when to use interfaces vs. type aliases for props/state.</p>
+  </li>
+  <li>
+    <p>Understand typing for event handlers, children, and generics.</p>
+  </li>
+  <li>
+    <p>Compare typing in functional vs. class components.</p>
+  </li>
+  <li>
+    <p>Avoid common pitfalls like implicit  <code class="language-plaintext highlighter-rouge">any</code>, missing props, and state mutation.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="3-concept-introduction-with-analogy">3. Concept Introduction with Analogy</h2>
+
+<h2 id="analogy-the-portfolio-ledger"><strong>Analogy: The Portfolio Ledger</strong></h2>
+
+<ul>
+  <li>
+    <p><strong>Props</strong>  are like asset forms: Each field (name, value, change) must be filled out with the correct type—no mixing up numbers and text.</p>
+  </li>
+  <li>
+    <p><strong>State</strong>  is the running ledger: It tracks all changes and must always be accurate and up-to-date.</p>
+  </li>
+  <li>
+    <p><strong>Functional Components</strong>  are like calculators: They process data quickly, and can keep memory (state) with hooks.</p>
+  </li>
+  <li>
+    <p><strong>Class Components</strong>  are like portfolio managers: They manage more complex workflows, with a clear structure for their data and methods.</p>
+  </li>
+</ul>
+
+<p><strong>TypeScript is the auditor:</strong><br />
+It catches every type mismatch before it becomes a costly bug.</p>
+
+<hr />
+
+<h2 id="4-technical-deep-dive">4. Technical Deep Dive</h2>
+
+<p><strong>A. Typing Props: Interfaces and Type Aliases</strong></p>
+
+<p><strong>1. Defining Props with Interfaces</strong></p>
+
+<ul>
+  <li>
+    <p>Use  <code class="language-plaintext highlighter-rouge">interface</code>  or  <code class="language-plaintext highlighter-rouge">type</code>  to declare the shape of props.</p>
+  </li>
+  <li>
+    <p>Interfaces are extensible and ideal for public APIs.</p>
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// AssetCard.tsx</span>
+<span class="kr">interface</span> <span class="nx">AssetCardProps</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">symbol</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">value</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="nl">change</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="nl">onRemove</span><span class="p">:</span> <span class="p">(</span><span class="nx">symbol</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><strong>2. Using Type Aliases for Props</strong></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">-</span>   <span class="nx">Type</span> <span class="nx">aliases</span> <span class="nx">are</span> <span class="nx">great</span> <span class="k">for</span> <span class="nx">unions</span> <span class="nx">or</span> <span class="nx">when</span> <span class="nx">you</span> <span class="nx">want</span> <span class="nx">to</span> <span class="nx">combine</span> <span class="nx">types</span><span class="p">.</span>
+
+<span class="nx">type</span> <span class="nx">AssetType</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">stock</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">bond</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">crypto</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">type</span> <span class="nx">AssetProps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">type</span><span class="p">:</span> <span class="nx">AssetType</span><span class="p">;</span>
+  <span class="nl">value</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p><strong>3. Optional and Default Props</strong></p>
+
+<ul>
+  <li>
+    <p>Use  <code class="language-plaintext highlighter-rouge">?</code>  for optional props.</p>
+  </li>
+  <li>
+    <p>Provide default values in destructuring or with  <code class="language-plaintext highlighter-rouge">defaultProps</code>  (class components).
+```js
+const AssetCard: React.FC<AssetCardProps> = ({
+  name,
+  symbol,
+  value,
+  change,
+  onRemove
+}) =&gt; (</AssetCardProps></p>
+  </li>
+</ul>
+<div>
+    <span>{name} ({symbol})</span>
+    <span>${value}</span>
+    &lt;span style=&gt;
+      {change &gt; 0 ? '+' : ''}{change}%
+    &lt;/span&gt;
+    &lt;button onClick={() =&gt; onRemove(symbol)}&gt;Remove&lt;/button&gt;
+  </div>
+<p>);</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+-   If you pass a prop not in the interface, TypeScript will error.
+    
+
+----------
+
+ **B. Typing State in Functional Components**
+
+**1. useState with Explicit Types**
+```js
+const [selectedSymbol, setSelectedSymbol] = useState&lt;string | null&gt;(null);
+const [filters, setFilters] = useState&lt;{ type: AssetType; minValue: number }&gt;({ type: 'stock', minValue: 0 });
+</code></pre></div></div>
+<ul>
+  <li>TypeScript infers the type from the initial value, but you can specify explicitly for clarity</li>
+</ul>
+
+<p><strong>2. Complex State with useReducer</strong></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">PortfolioState</span> <span class="p">{</span>
+  <span class="nl">assets</span><span class="p">:</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span> <span class="nl">symbol</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span> <span class="nl">value</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span> <span class="nl">change</span><span class="p">:</span> <span class="nx">number</span> <span class="p">}[];</span>
+<span class="p">}</span>
+<span class="nx">type</span> <span class="nx">PortfolioAction</span> <span class="o">=</span>
+  <span class="o">|</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">add</span><span class="dl">'</span><span class="p">;</span> <span class="nl">asset</span><span class="p">:</span> <span class="nx">PortfolioState</span><span class="p">[</span><span class="dl">'</span><span class="s1">assets</span><span class="dl">'</span><span class="p">][</span><span class="nx">number</span><span class="p">]</span> <span class="p">}</span>
+  <span class="o">|</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">remove</span><span class="dl">'</span><span class="p">;</span> <span class="nl">symbol</span><span class="p">:</span> <span class="nx">string</span> <span class="p">};</span>
+
+<span class="kd">function</span> <span class="nf">portfolioReducer</span><span class="p">(</span><span class="nx">state</span><span class="p">:</span> <span class="nx">PortfolioState</span><span class="p">,</span> <span class="nx">action</span><span class="p">:</span> <span class="nx">PortfolioAction</span><span class="p">):</span> <span class="nx">PortfolioState</span> <span class="p">{</span>
+  <span class="k">switch </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="dl">'</span><span class="s1">add</span><span class="dl">'</span><span class="p">:</span>
+      <span class="k">return</span> <span class="p">{</span> <span class="p">...</span><span class="nx">state</span><span class="p">,</span> <span class="na">assets</span><span class="p">:</span> <span class="p">[...</span><span class="nx">state</span><span class="p">.</span><span class="nx">assets</span><span class="p">,</span> <span class="nx">action</span><span class="p">.</span><span class="nx">asset</span><span class="p">]</span> <span class="p">};</span>
+    <span class="k">case</span> <span class="dl">'</span><span class="s1">remove</span><span class="dl">'</span><span class="p">:</span>
+      <span class="k">return</span> <span class="p">{</span> <span class="p">...</span><span class="nx">state</span><span class="p">,</span> <span class="na">assets</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">assets</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">symbol</span> <span class="o">!==</span> <span class="nx">action</span><span class="p">.</span><span class="nx">symbol</span><span class="p">)</span> <span class="p">};</span>
+    <span class="nl">default</span><span class="p">:</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useReducer</span><span class="p">(</span><span class="nx">portfolioReducer</span><span class="p">,</span> <span class="p">{</span> <span class="na">assets</span><span class="p">:</span> <span class="p">[]</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Useful for non-trivial, multi-field state.</li>
+</ul>
+
+<hr />
+
+<p><strong>C. Typing Functional Components</strong></p>
+
+<p><strong>1. With React.FC or Explicit Props</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">React.FC&lt;Props&gt;</code>  adds  <code class="language-plaintext highlighter-rouge">children</code>  by default, but explicit typing is often clearer.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">AssetCard</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span><span class="o">&lt;</span><span class="nx">AssetCardProps</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>
+<span class="c1">// or</span>
+<span class="kd">const</span> <span class="nx">AssetCard</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">symbol</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">change</span><span class="p">,</span> <span class="nx">onRemove</span> <span class="p">}:</span> <span class="nx">AssetCardProps</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>
+</code></pre></div></div>
+<p><strong>2. Typing Event Handlers</strong></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">handleChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ChangeEvent</span><span class="o">&lt;</span><span class="nx">HTMLInputElement</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nf">setFilters</span><span class="p">({</span> <span class="p">...</span><span class="nx">filters</span><span class="p">,</span> <span class="na">minValue</span><span class="p">:</span> <span class="nc">Number</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<ul>
+  <li>Use React’s event types for safety.</li>
+</ul>
+
+<p><strong>3. Typing Children</strong></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">WrapperProps</span> <span class="p">{</span>
+  <span class="nl">children</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ReactNode</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">Wrapper</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FC</span><span class="o">&lt;</span><span class="nx">WrapperProps</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">children</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">children</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err">;
+</span></code></pre></div></div>
+<p><strong>D. Typing Class Components</strong></p>
+
+<p><strong>1. Props and State Generics</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">React.Component&lt;Props, State&gt;</code>  gives full type safety.
+```js
+interface AssetFormProps { onAdd: (asset: AssetCardProps) =&gt; void; }
+interface AssetFormState { name: string; symbol: string; value: string; change: string; }</li>
+</ul>
+
+<p>class AssetForm extends React.Component&lt;AssetFormProps, AssetFormState&gt; {
+  state: AssetFormState = { name: ‘’, symbol: ‘’, value: ‘’, change: ‘’ };</p>
+
+<p>handleChange = (e: React.ChangeEvent<HTMLInputElement>) =&gt; {
+    this.setState({ [e.target.name]: e.target.value } as Pick&lt;AssetFormState, keyof AssetFormState&gt;);
+  };</HTMLInputElement></p>
+
+<p>handleSubmit = (e: React.FormEvent) =&gt; {
+    e.preventDefault();
+    this.props.onAdd({
+      name: this.state.name,
+      symbol: this.state.symbol,
+      value: parseFloat(this.state.value),
+      change: parseFloat(this.state.change),
+      onRemove: () =&gt; {}
+    });
+    this.setState({ name: ‘’, symbol: ‘’, value: ‘’, change: ‘’ });
+  };</p>
+
+<p>render() {
+    return (
+      &lt;form onSubmit={this.handleSubmit}&gt;
+        &lt;input name=”name” value={this.state.name} onChange={this.handleChange} /&gt;
+        &lt;input name=”symbol” value={this.state.symbol} onChange={this.handleChange} /&gt;
+        &lt;input name=”value” value={this.state.value} onChange={this.handleChange} type=”number” /&gt;
+        &lt;input name=”change” value={this.state.change} onChange={this.handleChange} type=”number” /&gt;
+        <button type="submit">Add Asset</button>
+      &lt;/form&gt;
+    );
+  }
+}</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> **E. Best Practices and Pitfalls**
+ | Pitfall                        | Best Practice                                      |
+|-------------------------------|----------------------------------------------------|
+| Using `any`                   | Always type props and state explicitly             |
+| Implicit `any` in events      | Use React types for event handlers                 |
+| Optional props w/o default    | Provide defaults or handle `undefined`             |
+| Mutating state directly       | Use state setters and immutable patterns           |
+| Not exporting interfaces      | Export for reuse and testing                       |
+
+## 5. Step-by-Step Data Modeling &amp; Code Walkthrough
+
+**A. Functional Component: Asset List**
+```js
+interface Asset {
+  name: string;
+  symbol: string;
+  value: number;
+  change: number;
+}
+interface AssetListProps {
+  assets: Asset[];
+  onRemove: (symbol: string) =&gt; void;
+}
+const AssetList: React.FC&lt;AssetListProps&gt; = ({ assets, onRemove }) =&gt; (
+  &lt;ul&gt;
+    {assets.map(a =&gt; (
+      &lt;li key={a.symbol}&gt;
+        {a.name} ({a.symbol}): ${a.value} ({a.change &gt; 0 ? '+' : ''}{a.change}%)
+        &lt;button onClick={() =&gt; onRemove(a.symbol)}&gt;Remove&lt;/button&gt;
+      &lt;/li&gt;
+    ))}
+  &lt;/ul&gt;
+);
+</code></pre></div></div>
+<p><strong>B. Class Component: Asset Form</strong></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">AssetFormProps</span> <span class="p">{</span> <span class="nl">onAdd</span><span class="p">:</span> <span class="p">(</span><span class="nx">asset</span><span class="p">:</span> <span class="nx">Asset</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span> <span class="p">}</span>
+<span class="kr">interface</span> <span class="nx">AssetFormState</span> <span class="p">{</span> <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span> <span class="nl">symbol</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span> <span class="nl">value</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span> <span class="nl">change</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">AssetForm</span> <span class="kd">extends</span> <span class="nc">React</span><span class="p">.</span><span class="nx">Component</span><span class="o">&lt;</span><span class="nx">AssetFormProps</span><span class="p">,</span> <span class="nx">AssetFormState</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="na">state</span><span class="p">:</span> <span class="nx">AssetFormState</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> <span class="na">symbol</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> <span class="na">change</span><span class="p">:</span> <span class="dl">''</span> <span class="p">};</span>
+
+  <span class="nx">handleChange</span> <span class="o">=</span> <span class="p">(</span><span class="na">e</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">ChangeEvent</span><span class="o">&lt;</span><span class="nx">HTMLInputElement</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nf">setState</span><span class="p">({</span> <span class="p">[</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">]:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="p">}</span> <span class="nx">as</span> <span class="nx">Pick</span><span class="o">&lt;</span><span class="nx">AssetFormState</span><span class="p">,</span> <span class="nx">keyof</span> <span class="nx">AssetFormState</span><span class="o">&gt;</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="nx">handleSubmit</span> <span class="o">=</span> <span class="p">(</span><span class="na">e</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FormEvent</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nf">preventDefault</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nf">onAdd</span><span class="p">({</span>
+      <span class="na">name</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+      <span class="na">symbol</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">symbol</span><span class="p">,</span>
+      <span class="na">value</span><span class="p">:</span> <span class="nf">parseFloat</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">value</span><span class="p">),</span>
+      <span class="na">change</span><span class="p">:</span> <span class="nf">parseFloat</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">change</span><span class="p">)</span>
+    <span class="p">});</span>
+    <span class="k">this</span><span class="p">.</span><span class="nf">setState</span><span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> <span class="na">symbol</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> <span class="na">change</span><span class="p">:</span> <span class="dl">''</span> <span class="p">});</span>
+  <span class="p">};</span>
+
+  <span class="nf">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return </span><span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleSubmit</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">symbol</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">symbol</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">value</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">}</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">number</span><span class="dl">"</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">change</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">change</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleChange</span><span class="p">}</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">number</span><span class="dl">"</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Add</span> <span class="nx">Asset</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><strong>C. State Typing with useReducer (Portfolio Management)</strong></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">PortfolioState</span> <span class="p">{</span>
+  <span class="nl">assets</span><span class="p">:</span> <span class="nx">Asset</span><span class="p">[];</span>
+<span class="p">}</span>
+<span class="nx">type</span> <span class="nx">PortfolioAction</span> <span class="o">=</span>
+  <span class="o">|</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">add</span><span class="dl">'</span><span class="p">;</span> <span class="nl">asset</span><span class="p">:</span> <span class="nx">Asset</span> <span class="p">}</span>
+  <span class="o">|</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">remove</span><span class="dl">'</span><span class="p">;</span> <span class="nl">symbol</span><span class="p">:</span> <span class="nx">string</span> <span class="p">};</span>
+
+<span class="kd">function</span> <span class="nf">portfolioReducer</span><span class="p">(</span><span class="nx">state</span><span class="p">:</span> <span class="nx">PortfolioState</span><span class="p">,</span> <span class="nx">action</span><span class="p">:</span> <span class="nx">PortfolioAction</span><span class="p">):</span> <span class="nx">PortfolioState</span> <span class="p">{</span>
+  <span class="k">switch </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="dl">'</span><span class="s1">add</span><span class="dl">'</span><span class="p">:</span>
+      <span class="k">return</span> <span class="p">{</span> <span class="p">...</span><span class="nx">state</span><span class="p">,</span> <span class="na">assets</span><span class="p">:</span> <span class="p">[...</span><span class="nx">state</span><span class="p">.</span><span class="nx">assets</span><span class="p">,</span> <span class="nx">action</span><span class="p">.</span><span class="nx">asset</span><span class="p">]</span> <span class="p">};</span>
+    <span class="k">case</span> <span class="dl">'</span><span class="s1">remove</span><span class="dl">'</span><span class="p">:</span>
+      <span class="k">return</span> <span class="p">{</span> <span class="p">...</span><span class="nx">state</span><span class="p">,</span> <span class="na">assets</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">assets</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="nx">a</span> <span class="o">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">symbol</span> <span class="o">!==</span> <span class="nx">action</span><span class="p">.</span><span class="nx">symbol</span><span class="p">)</span> <span class="p">};</span>
+    <span class="nl">default</span><span class="p">:</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useReducer</span><span class="p">(</span><span class="nx">portfolioReducer</span><span class="p">,</span> <span class="p">{</span> <span class="na">assets</span><span class="p">:</span> <span class="p">[]</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="6-interactive-challenge--mini-project">6. Interactive Challenge / Mini-Project</h2>
+
+<p><strong>Your Turn!</strong></p>
+
+<ol>
+  <li>
+    <p>Create a  <code class="language-plaintext highlighter-rouge">PortfolioSummary</code>  functional component that:</p>
+
+    <ul>
+      <li>
+        <p>Receives a typed array of assets (<code class="language-plaintext highlighter-rouge">Asset[]</code>) as props.</p>
+      </li>
+      <li>
+        <p>Renders the total value and average percentage change.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Create an  <code class="language-plaintext highlighter-rouge">AssetEditor</code>  class component that:</p>
+
+    <ul>
+      <li>
+        <p>Has typed state for  <code class="language-plaintext highlighter-rouge">name</code>,  <code class="language-plaintext highlighter-rouge">symbol</code>,  <code class="language-plaintext highlighter-rouge">value</code>, and  <code class="language-plaintext highlighter-rouge">change</code>.</p>
+      </li>
+      <li>
+        <p>Accepts a callback prop  <code class="language-plaintext highlighter-rouge">onUpdate</code>  (typed) to update an asset.</p>
+      </li>
+      <li>
+        <p>Resets the form after submission.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="7-common-pitfalls--best-practices">7. Common Pitfalls &amp; Best Practices</h2>
+<p>| Pitfall                                 | Best Practice                                      |
+|—————————————–|—————————————————-|
+| Using <code class="language-plaintext highlighter-rouge">any</code> for props/state             | Always define explicit types                       |
+| Not handling optional props             | Provide defaults or handle <code class="language-plaintext highlighter-rouge">undefined</code>             |
+| Mutating state directly                 | Use state setters and immutable patterns           |
+| Not exporting interfaces/types          | Export for reuse and testing                       |
+| Mixing up functional and class patterns | Be consistent and clear                            |</p>
+
+<h2 id="8-optional-programmers-workflow-checklist">8. Optional: Programmer’s Workflow Checklist</h2>
+
+<ul>
+  <li>
+    <p>Define interfaces/types for all props and state.</p>
+  </li>
+  <li>
+    <p>Use explicit types for event handlers and refs.</p>
+  </li>
+  <li>
+    <p>Use functional components for most new code, but type class components when needed.</p>
+  </li>
+  <li>
+    <p>Use  <code class="language-plaintext highlighter-rouge">useReducer</code>  for complex state logic.</p>
+  </li>
+</ul>
+
+  </div>
+
+  <hr/>
+
+  
+  
+
+  
+
+  
+    <nav style="display:flex; justify-content:space-between; gap:1rem;">
+      <div>
+        
+          
+          <a href="">← </a>
+        
+      </div>
+      <div>
+        
+          
+          <a href=""> →</a>
+        
+      </div>
+    </nav>
+  
+</article>
+
+      </div>
+    </main>
+
+	<!-- The following code is commented out to remove the footer information in the default page.-->	
+	<!--<footer class="site-footer h-card">
+  <data class="u-url" href="/winternship/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Winternship 2025</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Winternship 2025</li><li><a class="u-email" href="mailto:sudarshan@iitrpr.ac.in">sudarshan@iitrpr.ac.in</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/sudarshansudarshan"><svg class="svg-icon"><use xlink:href="/winternship/assets/minima-social-icons.svg#github"></use></svg> <span class="username">sudarshansudarshan</span></a></li><li><a href="https://www.twitter.com/sudarshaniisc"><svg class="svg-icon"><use xlink:href="/winternship/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">sudarshaniisc</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+-->
+
+  </body>
+
+</html>
+
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>

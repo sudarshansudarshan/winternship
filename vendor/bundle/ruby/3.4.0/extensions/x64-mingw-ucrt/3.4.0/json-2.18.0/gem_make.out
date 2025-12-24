@@ -1,0 +1,26 @@
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/json-2.18.0/ext/json/ext/parser
+C:/Ruby34-x64/bin/ruby.exe extconf.rb
+checking for rb_enc_interned_str() in ruby/encoding.h... yes
+checking for rb_str_to_interned_str() in ruby.h... yes
+checking for rb_hash_new_capa() in ruby.h... yes
+checking for rb_hash_bulk_insert() in ruby.h... yes
+checking for whether -std=c99 is accepted as CFLAGS... yes
+checking for x86intrin.h... yes
+checking for cpuid.h... yes
+creating Makefile
+
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/json-2.18.0/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20251224-20176-yd2pu6 sitelibdir\=./.gem.20251224-20176-yd2pu6 clean
+
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/json-2.18.0/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20251224-20176-yd2pu6 sitelibdir\=./.gem.20251224-20176-yd2pu6
+generating parser-x64-mingw-ucrt.def
+compiling parser.c
+linking shared-object json/ext/parser.so
+
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/json-2.18.0/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20251224-20176-yd2pu6 sitelibdir\=./.gem.20251224-20176-yd2pu6 install
+/usr/bin/install -c -m 0755 parser.so ./.gem.20251224-20176-yd2pu6/json/ext
+
+current directory: E:/Rohit PhD Project/WIntership website Main/winternship-main/winternship-main/vendor/bundle/ruby/3.4.0/gems/json-2.18.0/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20251224-20176-yd2pu6 sitelibdir\=./.gem.20251224-20176-yd2pu6 clean
