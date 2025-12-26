@@ -3,6 +3,43 @@ layout: default
 ---
 
 <article class="post">
+  {% comment %} Get all case studies in the same module, sorted by order {% endcomment %}
+  {% assign module_items = site.case_studies | where: "module", page.module | sort: "order" %}
+  {% assign current_index = nil %}
+
+  {% comment %} Find current page index {% endcomment %}
+  {% for item in module_items %}
+    {% if item.url == page.url %}
+      {% assign current_index = forloop.index0 %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% comment %} Display navigation if page found {% endcomment %}
+  {% if current_index != nil and module_items.size > 1 %}
+    <nav style="display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem 0;">
+      <div style="flex:1; text-align:left;">
+        {% if current_index > 0 %}
+          {% assign prev_index = current_index | minus: 1 %}
+          {% assign prev = module_items[prev_index] %}
+          <a href="{{ prev.url | relative_url }}" style="text-decoration:none; font-size:1.1em;">
+            ←
+          </a>
+        {% endif %}
+      </div>
+      <div style="flex:1; text-align:right;">
+        {% assign last_index = module_items.size | minus: 1 %}
+        {% if current_index < last_index %}
+          {% assign next_index = current_index | plus: 1 %}
+          {% assign next = module_items[next_index] %}
+          <a href="{{ next.url | relative_url }}" style="text-decoration:none; font-size:1.1em;">
+            →
+          </a>
+        {% endif %}
+      </div>
+    </nav>
+  {% endif %}
+
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     {% if page.summary %}<p class="post-description">{{ page.summary }}</p>{% endif %}

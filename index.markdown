@@ -5,10 +5,7 @@
 layout: home
 ---
 
-# Welcome to NPTEL Winter Internship 2025
-
 **Organized by NPTEL** — Master full-stack development with the MERN stack under the guidance of **Prof. Sudarshan Iyengar** at IIT Ropar's Vicharanashala Lab. This intensive program covers TypeScript, React, Express.js, and MongoDB through hands-on case studies and real-world projects, bringing together 400+ learners from across India.
 
-<!-- **Quick Links:** | [FAQ](Faq.md) | [Intro](/intro/) | [Case Studies](/case-studies/)  -->
 
 
