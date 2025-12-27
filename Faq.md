@@ -223,6 +223,25 @@ If you are still unable to send messages, take a **screenshot or screen recordin
 
 These practices help maintain clarity and ensure no updates are missed.
 
+**10.6 I'm having issues with profile pictures on Cliq Channel. What should I do?**  
+
+If you're facing profile picture issues, try these troubleshooting steps:
+
+**For specific user profile picture issues:**
+1. Navigate to **accounts.zoho.com**
+2. Go to **Settings**
+3. Check whether the **Profile Picture Visibility** is set to:
+   - **"Only users in my organization"** or
+   - **"Everyone"**
+
+**If you cannot see any user profile pictures:**
+1. **Hard-refresh your browser** and **clear cookies and cache**
+2. Follow this guide: https://help.codehs.com/en/articles/4951972-how-to-clear-your-browser-cache-and-hard-refresh
+
+**If issues still persist:**
+- This may be due to your **data center being mapped to US instead of India**
+- Send an email with detailed issue description to: **support@zohocliq.com**
+
 
 
 ---
