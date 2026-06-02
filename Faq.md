@@ -90,6 +90,11 @@ Once submitted, the request will be reviewed and processed by the team.
 If an intern joins the morning stand-up using a different or mismatched email ID, it will be marked as absent. 
 In exceptional cases, the issue may be considered with a warning and deduction of Health Points (HP).
 
+**2.8. I am not able to join the zoom from the link provided? It says "only registered participants are allowed".**
+Step 1: Ensure that you installed the Zoom Workplace on your Desktop or Laptop. 
+Step 2: Login with your registered mail ID on the Zoom Workplace Application. 
+Step 3: Click on the link to join the meet by registering yourself for the meeting. 
+
 ---
 
 ## 3. Mentorship & Guidance
@@ -751,3 +756,4 @@ Once your Pull Request is reviewed and merged, your blog will be published and v
 https://sudarshansudarshan.github.io/winternship/blogs/
 
 Please note that only properly formatted submissions following the above steps will be considered.
+
